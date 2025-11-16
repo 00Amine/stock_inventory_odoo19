@@ -1,143 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data>
-        <!-- Form View -->
+
         <record id="produit_form_view" model="ir.ui.view">
             <field name="name">produit.form.view</field>
             <field name="model">stock.produits</field>
             <field name="arch" type="xml">
                 <form class="custom-form">
-                    <style>
-                        .custom-form {
-                            background: #f8f9fa; /* Light gray background */
-                            border-radius: 10px;
-                            padding: 20px;
-                            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-                            font-family: 'Arial', sans-serif;
-                        }
-
-                        .form-header h2 {
-                            text-align: center;
-                            color: #333;
-                            margin-bottom: 20px;
-                        }
-
-                        .form-group h3 {
-                            color: #007bff; /* Blue heading color */
-                            margin-bottom: 15px;
-                        }
-
-                        .form-row {
-                            display: grid;
-                            grid-template-columns: 1fr 1fr; /* Two columns */
-                            gap: 20px; /* Spacing between columns */
-                            align-items: center;
-                        }
-
-                        .form-row label {
-                            display: block;
-                            margin-bottom: 5px;
-                            font-weight: bold;
-                            color: #555; /* Dark gray for labels */
-                        }
-
-                        field[name] {
-                            border: 1px solid #ccc; /* Light gray border */
-                            border-radius: 5px;
-                            padding: 8px;
-                            background: #fff; /* White background */
-                            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1); /* Subtle inner shadow */
-                            font-size: 14px;
-                            width: 100%;
-                            box-sizing: border-box;
-                        }
-
-                        field[name]:focus {
-                            border-color: #007bff; /* Blue border on focus */
-                            outline: none;
-                            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
-                        }
-
-                        .form-footer {
-                            text-align: center;
-                            margin-top: 20px;
-                        }
-
-                        .custom-button {
-                            background: #007bff; /* Blue background */
-                            color: white;
-                            border: none;
-                            padding: 10px 15px;
-                            font-size: 14px;
-                            border-radius: 5px;
-                            cursor: pointer;
-                            transition: 0.3s ease;
-                        }
-
-                        .custom-button:hover {
-                            background: #0056b3; /* Darker blue on hover */
-                        }
-                    </style>
                     <sheet>
-                        <div class="form-header">
-                            <h2>Product Details</h2>
-                        </div>
 
-                        <div class="form-group">
-                            <h3>Informations de base</h3>
-                            <div class="form-row">
-                                <div>
-                                    <label for="name">Nom</label>
-                                    <field name="name" nolabel="1"/>
-                                </div>
-                                <div>
-                                    <label for="reference">Référence</label>
-                                    <field name="reference" readonly="1" nolabel="1"/>
-                                </div>
-                            </div>
-                            <div class="form-row">
-                                <div>
-                                    <label for="barcode">Code-barres</label>
-                                    <field name="barcode" nolabel="1"/>
-                                </div>
-                            </div>
-                        </div>
+                        <group string="Informations de base">
+                            <group> <field name="name"/>
+                                <field name="barcode"/>
+                            </group>
+                            <group> <field name="reference" readonly="1"/>
+                            </group>
+                        </group>
 
-                        <div class="form-group">
-                            <h3>Détails de l'inventaire</h3>
-                            <div class="form-row">
-                                <div>
-                                    <label for="categorie_id">Catégorie</label>
-                                    <field name="categorie_id" nolabel="1"/>
-                                </div>
-                                <div>
-                                    <label for="emplacement_id">Emplacement</label>
-                                    <field name="emplacement_id" nolabel="1"/>
-                                </div>
-                            </div>
-                            <div class="form-row">
-                                <div>
-                                    <label for="fournisseur_id">Fournisseur</label>
-                                    <field name="fournisseur_id" nolabel="1"/>
-                                </div>
-                                <div>
-                                    <label for="quantity">Quantité</label>
-                                    <field name="quantity" nolabel="1"/>
-                                </div>
-                            </div>
-                        </div>
+                        <group string="Détails de l'inventaire">
+                            <group> <field name="categorie_id"/>
+                                <field name="fournisseur_id"/>
+                            </group>
+                            <group> <field name="emplacement_id"/>
+                                <field name="quantity"/>
+                            </group>
+                        </group>
 
-                        <button name="%(stock_inventory_project.report_stock)d" 
-                                string="Imprimer le Rapport" 
-                                type="action" 
-                                class="custom-button"/>
+                        <button name="%(custom_module.report_stock_produit)d"
+                            string="Imprimer le Rapport"
+                            type="action"
+                            class="custom-button"/>
                     </sheet>
                 </form>
             </field>
         </record>
 
-
-
-        <!-- List View -->
         <record id="produit_list_view" model="ir.ui.view">
             <field name="name">produit.list.view</field>
             <field name="model">stock.produits</field>
@@ -150,11 +47,11 @@
             </field>
         </record>
 
-        <!-- Action -->
         <record id="produit_action" model="ir.actions.act_window">
             <field name="name">Produits</field>
             <field name="res_model">stock.produits</field>
             <field name="view_mode">list,form</field>
         </record>
+
     </data>
 </odoo>

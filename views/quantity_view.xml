@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="view_stock_quantity_tree" model="ir.ui.view">
+            <field name="name">stock.quantity.tree</field>
+            <field name="model">stock.quantity</field>
+            <field name="arch" type="xml">
+                <list string="Stock Quantities">
+                    <field name="product_id"/>
+                    <field name="emplacement_id"/>
+                    <field name="quantity"/>
+                </list>
+            </field>
+        </record>
+
+        <record id="view_stock_quantity_form" model="ir.ui.view">
+            <field name="name">stock.quantity.form</field>
+            <field name="model">stock.quantity</field>
+            <field name="arch" type="xml">
+                <form string="Stock Quantity">
+                    <sheet>
+                        <group>
+                            <field name="product_id"/>
+                            <field name="emplacement_id"/>
+                            <field name="quantity"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_stock_quantity_search" model="ir.ui.view">
+            <field name="name">stock.quantity.search</field>
+            <field name="model">stock.quantity</field>
+            <field name="arch" type="xml">
+                <search string="Search Stock Quantities">
+                    <field name="product_id"/>
+                    <field name="emplacement_id"/>
+                </search>
+            </field>
+        </record>
+
+        <record id="quantity_action" model="ir.actions.act_window">
+            <field name="name">Stock Quantities</field>
+            <field name="res_model">stock.quantity</field>
+            <field name="view_mode">list,form</field>
+        </record>
+
+    </data>
+</odoo>

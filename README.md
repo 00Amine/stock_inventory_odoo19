@@ -594,7 +594,7 @@ Chaque modèle dispose d'un accès (lecture, écriture, création, suppression) 
 
 ### Installation
 1. **Pré-requis :**
-   - PostgreSQL, Python, Odoo 18
+   - PostgreSQL, Python, Odoo 19
 2. **Dépendances :**
    - Le module dépend de `base` et `web`.
 3. **Procédure :**

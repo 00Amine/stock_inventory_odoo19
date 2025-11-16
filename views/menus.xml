@@ -1,14 +1,15 @@
-<odoo>
-    <data>
-        <!-- Main Menu -->
-        <menuitem id="stock_menu_root" name="Stock et Inventaire ERP" sequence="4"/>
+<?xml version="1.0" encoding="utf-8"?>
+    <odoo>
+        <data>
+            <!--  Main Menu  -->
+            <menuitem id="stock_menu_root" name="Stock et Inventaire ERP" sequence="4"/>
+            <!--  Submenus  -->
+            <menuitem id="produit_menu" name="Produits" parent="stock_menu_root" action="produit_action"/>
+            <menuitem id="categorie_menu" name="Catégories" parent="stock_menu_root" action="categorie_action"/>
+            <menuitem id="mouvement_menu" name="Mouvements" parent="stock_menu_root" action="mouvement_action"/>
+            <menuitem id="fournisseur_menu" name="Fournisseurs" parent="stock_menu_root" action="fournisseur_action"/>
+            <menuitem id="emplacement_menu" name="Emplacements" parent="stock_menu_root" action="emplacement_action"/>
+            <menuitem id="quantite_menu" name="Quantite" parent="stock_menu_root" action="quantity_action"/>
 
-        <!-- Submenus -->
-        <menuitem id="produit_menu" name="Produits" parent="stock_menu_root" action="produit_action"/>
-        <menuitem id="categorie_menu" name="Catégories" parent="stock_menu_root" action="categorie_action"/>
-        <menuitem id="mouvement_menu" name="Mouvements" parent="stock_menu_root" action="mouvement_action"/>
-        <menuitem id="fournisseur_menu" name="Fournisseurs" parent="stock_menu_root" action="fournisseur_action"/>
-        <menuitem id="emplacement_menu" name="Emplacements" parent="stock_menu_root" action="emplacement_action"/>
-        <menuitem id="quantite_menu" name="Quantite" parent="stock_menu_root" action="action_stock_quantity"/>
-    </data>
-</odoo>
+        </data>
+    </odoo>

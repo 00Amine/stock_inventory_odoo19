@@ -1,6 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data>
-        <!-- Form View -->
+
         <record id="fournisseur_form_view" model="ir.ui.view">
             <field name="name">fournisseur.form.view</field>
             <field name="model">fournisseur.model</field>
@@ -18,7 +19,6 @@
             </field>
         </record>
 
-        <!-- List View -->
         <record id="fournisseur_list_view" model="ir.ui.view">
             <field name="name">fournisseur.list.view</field>
             <field name="model">fournisseur.model</field>
@@ -32,11 +32,11 @@
             </field>
         </record>
 
-        <!-- Action -->
         <record id="fournisseur_action" model="ir.actions.act_window">
-            <field name="name">Fournisseurs</field>
+            <field name="name">Fournisseur</field>
             <field name="res_model">fournisseur.model</field>
             <field name="view_mode">list,form</field>
         </record>
+
     </data>
 </odoo>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="report_stock_produit" model="ir.actions.report">
+            <field name="name">Rapport de Produit</field>
+            <field name="model">stock.produits</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">custom_module.template_stock_produit</field>
+            <field name="binding_model_id" eval="False"/>
+        </record>
+
+        <template id="template_stock_produit">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="doc">
+                    <t t-call="web.external_layout">
+                        <div class="page">
+                            <h1>Rapport de Produit</h1>
+
+                            <p><strong>Nom du Produit:</strong>
+                                <span t-field="doc.name"/>
+                            </p>
+                            <p><strong>Référence:</strong>
+                                <span t-field="doc.reference"/>
+                            </p>
+                            <p><strong>Quantité en stock:</strong>
+                                <span t-field="doc.quantity"/>
+                            </p>
+                            <p><strong>Emplacement:</strong>
+                                <span t-field="doc.emplacement_id.name"/>
+                            </p>
+                            <p><strong>Fournisseur:</strong>
+                                <span t-field="doc.fournisseur_id.name"/>
+                            </p>
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+
+    </data>
+</odoo>

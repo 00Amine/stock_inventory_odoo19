@@ -6,8 +6,8 @@ class Produit(models.Model):
 
     name = fields.Char(string="Nom", required=True)
     reference = fields.Char(
-        string="Référence", 
-        required=True, 
+        string="Référence",
+        required=True,
         default=lambda self: self.env['ir.sequence'].next_by_code('stock.produits')
     )
     barcode = fields.Char(string="Code-barres")
@@ -18,9 +18,9 @@ class Produit(models.Model):
 
     quantity_ids = fields.One2many('stock.quantity', 'product_id', string="Quantités", readonly=True)
     quantity = fields.Float(
-        string="Quantité", 
-        compute="_compute_quantity", 
-        inverse="_inverse_quantity", 
+        string="Quantité",
+        compute="_compute_quantity",
+        inverse="_inverse_quantity",
         store=True
     )
 

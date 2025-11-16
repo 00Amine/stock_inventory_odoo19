@@ -6,8 +6,8 @@ class Emplacement(models.Model):
 
     name = fields.Char(string="Nom", required=True)
     type = fields.Selection(
-        [('int', 'Interne'), ('ext', 'Externe')], 
-        string="Type", 
+        [('int', 'Interne'), ('ext', 'Externe')],
+        string="Type",
         required=True
     )
     capacity = fields.Float(string="Capacité", required=True)
